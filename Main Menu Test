@@ -1,0 +1,33 @@
+int screenSizeX;
+int screenSizeY;
+int stage = 1;
+PImage startscreen; 
+
+void setup() {
+  screenSizeX = round(displayWidth * 0.90); 
+  screenSizeY = round(displayHeight * 0.90);
+  size(screenSizeX, screenSizeY);
+  startscreen = loadImage("nyan.jpg");
+  image(startscreen, 0, 0, screenSizeX, screenSizeY);
+}
+
+void draw() {
+  if (stage == 1) {
+    fill(#F7375E);
+    textSize(40);
+    textAlign(CENTER);
+    text("Nyan's Rainbow Adventures", 870, 510);
+    textSize(35);
+    text("Press Space to Start", 870, 560);
+  }
+  if (keyPressed)
+    if (key == ' ')
+      stage = 2;
+  if (stage == 2) {
+    background(#FF0000);
+    fill(0);
+    textSize(50);
+    textAlign(CENTER);
+    text("The Game Will Begin Now", 650,400);
+  }
+}
