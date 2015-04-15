@@ -1,0 +1,31 @@
+PImage nyan;
+PImage background1;
+PImage background2;
+int x1=0;
+int x2=1297;
+
+Nyan a = new Nyan();
+
+void setup() {
+  nyan = loadImage("nyan.png");
+  background1 = loadImage("background1.jpg");
+  background2 = loadImage("background2.jpg");
+  size(1200, 720);
+}
+
+void draw() {
+
+  if (x1<-1299)
+    x1=1297;
+  else
+    x1-=5;
+  if (x2<-1299)
+    x2=1297;
+  else
+    x2-=5;
+  image(background1, x1, 0);
+  image(background2, x2, 0);
+
+  a.display();
+  a.move();
+}
